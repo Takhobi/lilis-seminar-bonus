@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>プロっぽく見せるチェックリスト｜lilis × AIM 参加特典</title>
+<style>
+:root{
+  --paper:#FAF4F0; --card:#FFFCFA; --ink:#463F3A; --muted:#8C817A;
+  --sage:#9BB8A6; --sage-d:#5F8570; --sage-t:#EDF3EF;
+  --pink:#EBCEC6; --pink-d:#C48C80; --pink-t:#FBEFEB; --line:#EADFD8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+a{color:var(--sage-d)}
+header{padding:16px max(5vw,16px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.brand{font-weight:800;color:var(--sage-d)}
+main{max-width:980px;margin:auto;padding:56px 24px}
+.eyebrow{color:var(--sage-d);font-size:12px;font-weight:800;letter-spacing:.12em;margin:0 0 6px}
+h1{font-size:clamp(28px,4.4vw,44px);line-height:1.5;letter-spacing:-.02em;margin:10px 0 18px}
+h2{font-size:23px;line-height:1.55;margin:0}
+h3{font-size:17px;margin:0 0 10px}
+p{margin:14px 0}
+.lead{color:var(--muted)}
+.small,figcaption{font-size:12px;color:var(--muted)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin-bottom:56px}
+.dots{display:grid;grid-template-columns:repeat(7,8px);gap:9px;margin-bottom:18px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+.gifts{display:grid;gap:14px}
+.gift{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:18px;padding:22px 24px;box-shadow:0 10px 36px #b9a59a26;border:1px solid var(--line);transition:transform .15s}
+.gift:hover{transform:translateY(-2px)}
+.gift .tag{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:2px 12px;margin-bottom:8px}
+.gift.one .tag{background:var(--pink-t);color:var(--pink-d)}
+.gift.two .tag{background:var(--sage-t);color:var(--sage-d)}
+.gift b{display:block;font-size:17px;line-height:1.6}
+.gift span.go{font-size:13px;color:var(--muted)}
+
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 6px}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;font-size:12px;color:var(--muted);line-height:1.5}
+.flow div b{display:block;font-size:15px;color:var(--sage-d)}
+.flow div:first-child{background:var(--pink-t);border-color:var(--pink)}
+.flow div:first-child b{color:var(--pink-d)}
+
+.section-title{margin:64px 0 26px;padding-bottom:16px;border-bottom:2px solid var(--pink)}
+.section-title .eyebrow{color:var(--pink-d)}
+.notice{padding:18px 20px;border-left:3px solid var(--sage);background:var(--sage-t);font-size:14px;border-radius:0 10px 10px 0}
+
+/* steps */
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;margin:0 0 36px;position:relative}
+.step:not(:last-child)::after{content:'↓';position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);color:var(--pink-d);font-size:24px}
+.step-head{display:flex;align-items:center;gap:18px}
+.number{color:var(--pink-d);font-size:36px;font-weight:800;line-height:1}
+.memo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.memo span{background:var(--pink-t);border-radius:10px;padding:10px 12px;font-weight:700;font-size:14px}
+.memo small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+details{padding:14px 16px;background:#F6F1EC;border-radius:10px;margin-top:18px}
+summary{font-weight:700;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.9 inherit;margin:10px 0 0}
+.fill{background:#FFF3C9;border-radius:3px;padding:0 2px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;background:var(--sage-d);color:#fff;text-decoration:none;border:1px solid var(--sage-d);font:inherit;font-size:14px;font-weight:700;cursor:pointer;line-height:1.5}
+.btn:hover{filter:brightness(.94)}
+.btn.secondary{background:transparent;color:var(--sage-d)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible+label{outline:3px solid var(--sage);outline-offset:3px}
+.hint{font-size:13px;color:var(--muted);border-left:3px solid var(--pink);padding:4px 0 4px 12px;margin-top:14px}
+
+/* checklist */
+.progress{position:sticky;top:0;z-index:3;background:var(--paper);padding:12px 0 14px;margin-bottom:8px}
+.bar{height:10px;border-radius:999px;background:#EFE5DF;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--sage-d));transition:width .25s}
+.progress p{margin:0 0 6px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.progress button{background:none;border:none;color:var(--muted);font:inherit;font-size:12px;text-decoration:underline;cursor:pointer}
+.group{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+.group h3{display:flex;align-items:center;gap:10px}
+.group h3 .chip{font-size:11px;font-weight:800;background:var(--sage-t);color:var(--sage-d);border-radius:999px;padding:2px 10px;letter-spacing:.08em}
+.check{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px dashed var(--line)}
+.check:first-of-type{border-top:none}
+.check input{appearance:none;flex:0 0 22px;width:22px;height:22px;margin:3px 0 0;border:2px solid var(--sage);border-radius:6px;background:#fff;cursor:pointer;display:grid;place-content:center}
+.check input:checked{background:var(--sage-d);border-color:var(--sage-d)}
+.check input:checked::after{content:'';width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check label{cursor:pointer;font-size:15px;line-height:1.7}
+.check label small{display:block;font-size:12.5px;color:var(--muted)}
+.check input:checked+label{color:var(--muted)}
+.done-msg{display:none;text-align:center;background:var(--sage-t);color:var(--sage-d);font-weight:700;border-radius:14px;padding:18px;margin-top:8px}
+.done-msg.show{display:block}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{padding:22px 24px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.card p{font-size:14px;margin:0 0 12px}
+
+footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font-size:12px;color:var(--muted)}
+#status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:8px;padding:12px 20px;max-width:90vw;font-size:13px;z-index:5}
+#status:empty{display:none}
+
+@media(max-width:720px){
+  main{padding:32px 16px}
+  .hero{grid-template-columns:1fr;gap:26px;margin-bottom:40px}
+  .step{padding:22px 18px}
+  .step-head{gap:12px}
+  .number{font-size:28px}
+  h2{font-size:20px}
+  .memo{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr}
+  .group{padding:18px 16px}
+  .actions>.btn{flex:1}
+  header{letter-spacing:.04em}
+}
+</style>
+<style>
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:-24px 0 36px}
+nav.tabs a{font-size:13px;font-weight:700;text-decoration:none;color:var(--sage-d);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+nav.tabs a.on{background:var(--sage-d);color:#fff;border-color:var(--sage-d)}
+.group h3 .when{font-size:12px;color:var(--muted);font-weight:400;margin-left:auto}
+@media print{nav.tabs,.progress button,header,footer,#status{display:none}.group{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><span class="brand">lilis × AIM</span><span>SNS勉強会 vol.3 参加特典</span></header>
+<main>
+<nav class="tabs"><a href="index.html">リールを仕上げるスキル</a><a href="template.html">特典① 台本の指示文テンプレ</a><a class="on" href="checklist.html">特典② チェックリスト</a></nav>
+
+<p class="eyebrow">GIFT 02 ｜ CHECKLIST</p>
+<h1>プロっぽく見せる<br>チェックリスト</h1>
+<p class="lead">話す動画を「撮る前」から「投稿する前」まで、順番に確認できます。<br>全部できていなくても大丈夫。1本ごとに1つずつ増やしていけばOKです。</p>
+
+<div class="progress" aria-live="polite" style="margin-top:28px">
+  <p><span id="count">0 / 0 できました</span><button type="button" id="reset">チェックをすべて外す</button></p>
+  <div class="bar"><i id="bar"></i></div>
+</div>
+<div id="groups"></div>
+<div class="done-msg" id="done">すべてチェックできました🌷 この1本は、もう「任せて安心」な仕上がりです。</div>
+<p class="small" style="margin-top:14px">チェックの状態は、このブラウザにだけ保存されます（ほかの人には見えません）。印刷すると紙のチェックシートとしても使えます。</p>
+
+<div class="cards" style="margin-top:36px">
+  <div class="card"><h3>台本から作りたいとき</h3><p>「撮る前」の3項目は、特典①の指示文テンプレを使うとそのまま埋まります。</p><a class="btn secondary" href="template.html">特典①を開く</a></div>
+  <div class="card"><h3>テロップを自動でつけたいとき</h3><p>「仕上げ」と「表紙」は、スキルを使うとClaudeがほぼ自動で整えます。最後の確認だけ、このリストで。</p><a class="btn secondary" href="index.html">スキルの使い方を開く</a></div>
+</div>
+</main>
+<footer>lilis × AIM ｜ プロっぽく見せるチェックリスト · 2026.11<br>頑張りすぎなくていい。続けられる“仕組み”から。</footer>
+
+<script>
+const groups = [
+  ["撮る前（台本）", "BEFORE", [
+    ["最初の2秒で言うひと言が決まっている", "「誰の・どんな悩みか」がすぐ分かる言葉。あいさつから始めない"],
+    ["伝えたいことが1つにしぼれている", "あれもこれも話すと、何も残らない"],
+    ["最後に言うひと言が決まっている", "保存・フォロー・プロフィールへ、のどれか1つ"],
+  ]],
+  ["撮るとき", "SHOOTING", [
+    ["スマホを縦にして、目の高さで撮っている", ""],
+    ["顔が明るく映っている", "窓や照明の光が、顔の正面から当たる位置で"],
+    ["声がはっきり録れている", "静かな場所で、スマホを近くに置く"],
+    ["頭の上と胸のあたりに、少し余白がある", "あとでタイトルやテロップを置く場所になる"],
+  ]],
+  ["カット", "CUT", [
+    ["話し始めの前と、話し終わりのあとの間を切った", ""],
+    ["「えー」「あのー」や言い直しを切った", "同じ話を2回していないかも確認"],
+    ["全体が60秒以内におさまっている", "長いときは、伝えたいこと1つに関係ない部分から切る"],
+  ]],
+  ["仕上げ（テロップ）", "TELOP", [
+    ["テロップの聞き間違いを直した", "人の名前・商品名・数字は特に"],
+    ["1枚1行・13文字くらいまでで、意味のまとまりで区切れている", "「〜を」「〜が」だけが次に残っていない"],
+    ["強調は1枚に1語まで。数字や結論にしぼっている", "全部を目立たせると、どこも目立たない"],
+    ["テロップが顔や手元に重なっていない", ""],
+    ["タイトルが、動画の内容をひと言で表している", "15文字以内が目安"],
+  ]],
+  ["表紙", "COVER", [
+    ["短い言葉が、大きく真ん中にある", "プロフィールの一覧で切り取られても読める位置"],
+    ["過去の投稿と、色・文字の位置がそろっている", "並んだときに「このアカウントだ」と分かる"],
+  ]],
+  ["投稿する前", "BEFORE POSTING", [
+    ["スマホで、音ありで最後まで通して見た", ""],
+    ["音なしでも、テロップだけで内容が伝わる", "音を出さずに見る人も多い"],
+    ["言いすぎた表現になっていない", "「必ず」「誰でも」「絶対」などは、本当にそう言えるかを見直す"],
+  ]],
+];
+const KEY = 'lilis-vol3-checklist-v2';
+let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+const root = document.getElementById('groups'); let total = 0;
+groups.forEach(([name, en, items], gi) => {
+  const g = document.createElement('section'); g.className = 'group';
+  const h = document.createElement('h3'); h.innerHTML = `<span class="chip">${en}</span>${name}`; g.appendChild(h);
+  items.forEach(([t, sub], ii) => {
+    const id = `c${gi}-${ii}`; total++;
+    const row = document.createElement('div'); row.className = 'check';
+    const cb = document.createElement('input'); cb.type = 'checkbox'; cb.id = id; cb.checked = !!saved[id];
+    const lb = document.createElement('label'); lb.htmlFor = id; lb.textContent = t;
+    if (sub) { const s = document.createElement('small'); s.textContent = sub; lb.appendChild(s); }
+    cb.addEventListener('change', () => { saved[id] = cb.checked; persist(); update(); });
+    row.append(cb, lb); g.appendChild(row);
+  });
+  root.appendChild(g);
+});
+function persist(){ try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} }
+function update(){
+  const n = root.querySelectorAll('input:checked').length;
+  document.getElementById('count').textContent = `${n} / ${total} できました`;
+  document.getElementById('bar').style.width = (n / total * 100) + '%';
+  document.getElementById('done').classList.toggle('show', n === total);
+}
+document.getElementById('reset').addEventListener('click', () => { root.querySelectorAll('input').forEach(c => c.checked = false); saved = {}; persist(); update(); });
+update();
+</script>
+</body>
+</html>

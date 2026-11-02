@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>リールを仕上げるスキル｜lilis × AIM 参加特典</title>
+<style>
+:root{
+  --paper:#FAF4F0; --card:#FFFCFA; --ink:#463F3A; --muted:#8C817A;
+  --sage:#9BB8A6; --sage-d:#5F8570; --sage-t:#EDF3EF;
+  --pink:#EBCEC6; --pink-d:#C48C80; --pink-t:#FBEFEB; --line:#EADFD8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+a{color:var(--sage-d)}
+header{padding:16px max(5vw,16px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.brand{font-weight:800;color:var(--sage-d)}
+main{max-width:980px;margin:auto;padding:56px 24px}
+.eyebrow{color:var(--sage-d);font-size:12px;font-weight:800;letter-spacing:.12em;margin:0 0 6px}
+h1{font-size:clamp(28px,4.4vw,44px);line-height:1.5;letter-spacing:-.02em;margin:10px 0 18px}
+h2{font-size:23px;line-height:1.55;margin:0}
+h3{font-size:17px;margin:0 0 10px}
+p{margin:14px 0}
+.lead{color:var(--muted)}
+.small,figcaption{font-size:12px;color:var(--muted)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin-bottom:56px}
+.dots{display:grid;grid-template-columns:repeat(7,8px);gap:9px;margin-bottom:18px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+.gifts{display:grid;gap:14px}
+.gift{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:18px;padding:22px 24px;box-shadow:0 10px 36px #b9a59a26;border:1px solid var(--line);transition:transform .15s}
+.gift:hover{transform:translateY(-2px)}
+.gift .tag{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:2px 12px;margin-bottom:8px}
+.gift.one .tag{background:var(--pink-t);color:var(--pink-d)}
+.gift.two .tag{background:var(--sage-t);color:var(--sage-d)}
+.gift b{display:block;font-size:17px;line-height:1.6}
+.gift span.go{font-size:13px;color:var(--muted)}
+
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 6px}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;font-size:12px;color:var(--muted);line-height:1.5}
+.flow div b{display:block;font-size:15px;color:var(--sage-d)}
+.flow div:first-child{background:var(--pink-t);border-color:var(--pink)}
+.flow div:first-child b{color:var(--pink-d)}
+
+.section-title{margin:64px 0 26px;padding-bottom:16px;border-bottom:2px solid var(--pink)}
+.section-title .eyebrow{color:var(--pink-d)}
+.notice{padding:18px 20px;border-left:3px solid var(--sage);background:var(--sage-t);font-size:14px;border-radius:0 10px 10px 0}
+
+/* steps */
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;margin:0 0 36px;position:relative}
+.step:not(:last-child)::after{content:'↓';position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);color:var(--pink-d);font-size:24px}
+.step-head{display:flex;align-items:center;gap:18px}
+.number{color:var(--pink-d);font-size:36px;font-weight:800;line-height:1}
+.memo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.memo span{background:var(--pink-t);border-radius:10px;padding:10px 12px;font-weight:700;font-size:14px}
+.memo small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+details{padding:14px 16px;background:#F6F1EC;border-radius:10px;margin-top:18px}
+summary{font-weight:700;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.9 inherit;margin:10px 0 0}
+.fill{background:#FFF3C9;border-radius:3px;padding:0 2px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;background:var(--sage-d);color:#fff;text-decoration:none;border:1px solid var(--sage-d);font:inherit;font-size:14px;font-weight:700;cursor:pointer;line-height:1.5}
+.btn:hover{filter:brightness(.94)}
+.btn.secondary{background:transparent;color:var(--sage-d)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible+label{outline:3px solid var(--sage);outline-offset:3px}
+.hint{font-size:13px;color:var(--muted);border-left:3px solid var(--pink);padding:4px 0 4px 12px;margin-top:14px}
+
+/* checklist */
+.progress{position:sticky;top:0;z-index:3;background:var(--paper);padding:12px 0 14px;margin-bottom:8px}
+.bar{height:10px;border-radius:999px;background:#EFE5DF;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--sage-d));transition:width .25s}
+.progress p{margin:0 0 6px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.progress button{background:none;border:none;color:var(--muted);font:inherit;font-size:12px;text-decoration:underline;cursor:pointer}
+.group{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+.group h3{display:flex;align-items:center;gap:10px}
+.group h3 .chip{font-size:11px;font-weight:800;background:var(--sage-t);color:var(--sage-d);border-radius:999px;padding:2px 10px;letter-spacing:.08em}
+.check{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px dashed var(--line)}
+.check:first-of-type{border-top:none}
+.check input{appearance:none;flex:0 0 22px;width:22px;height:22px;margin:3px 0 0;border:2px solid var(--sage);border-radius:6px;background:#fff;cursor:pointer;display:grid;place-content:center}
+.check input:checked{background:var(--sage-d);border-color:var(--sage-d)}
+.check input:checked::after{content:'';width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check label{cursor:pointer;font-size:15px;line-height:1.7}
+.check label small{display:block;font-size:12.5px;color:var(--muted)}
+.check input:checked+label{color:var(--muted)}
+.done-msg{display:none;text-align:center;background:var(--sage-t);color:var(--sage-d);font-weight:700;border-radius:14px;padding:18px;margin-top:8px}
+.done-msg.show{display:block}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{padding:22px 24px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.card p{font-size:14px;margin:0 0 12px}
+
+footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font-size:12px;color:var(--muted)}
+#status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:8px;padding:12px 20px;max-width:90vw;font-size:13px;z-index:5}
+#status:empty{display:none}
+
+@media(max-width:720px){
+  main{padding:32px 16px}
+  .hero{grid-template-columns:1fr;gap:26px;margin-bottom:40px}
+  .step{padding:22px 18px}
+  .step-head{gap:12px}
+  .number{font-size:28px}
+  h2{font-size:20px}
+  .memo{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr}
+  .group{padding:18px 16px}
+  .actions>.btn{flex:1}
+  header{letter-spacing:.04em}
+}
+</style>
+<style>
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:-24px 0 36px}
+nav.tabs a{font-size:13px;font-weight:700;text-decoration:none;color:var(--sage-d);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+nav.tabs a.on{background:var(--sage-d);color:#fff;border-color:var(--sage-d)}
+.hero video{width:100%;max-width:300px;justify-self:center;border-radius:18px;box-shadow:0 14px 44px #b9a59a40;background:#000}
+.need{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.need div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px;color:var(--muted);line-height:1.55}
+.need b{display:block;font-size:15px;color:var(--ink)}
+.folders{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.folders span{border-radius:8px;background:var(--pink-t);padding:10px 14px;font-weight:700;font-size:14px}
+.folders small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.chat{background:#F6F1EC;border-radius:12px;padding:14px 16px;margin-top:14px;font-size:14px}
+.chat p{margin:6px 0}
+.chat .you{color:var(--pink-d);font-weight:700}
+.chat .ai{color:var(--sage-d);font-weight:700}
+@media(max-width:720px){.need{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><span class="brand">lilis × AIM</span><span>SNS勉強会 vol.3 参加特典</span></header>
+<main>
+<nav class="tabs"><a class="on" href="index.html">リールを仕上げるスキル</a><a href="template.html">特典① 台本の指示文テンプレ</a><a href="checklist.html">特典② チェックリスト</a></nav>
+
+<section class="hero">
+  <div>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="eyebrow">SHORT REEL SKILL</p>
+    <h1>カットした動画を、<br>Claudeに渡すだけで<br>リールに。</h1>
+    <p class="lead">テロップ・強調・タイトル・表紙までを、Claudeが仕上げます。<br>あなたは「どの言葉を強調するか」を選ぶだけ。<br>右の動画は、このスキルで仕上げた見本です。</p>
+    <div class="actions"><a class="btn" href="short-reel-autotelop.zip" download>スキルをダウンロード（ZIP）</a></div>
+    <p class="small">ZIP形式｜Claude用スキル（仕上げのプログラム・見た目3種類・手順書）<br>動画と音声は、すべてあなたのパソコンの中で処理されます。</p>
+    <a href="#steps">使い方を順番に見る ↓</a>
+  </div>
+  <video src="assets/sample_reel.mp4" controls playsinline poster="assets/sample_cover.png"></video>
+</section>
+
+<div class="need">
+  <div><b>Mac</b>Windowsでも動きますが、文字の書体の設定が必要です</div>
+  <div><b>Claudeデスクトップアプリ</b>「Code」タブが使えるプラン（有料プラン）が必要です</div>
+  <div><b>カット済みの動画</b>要らない間や言い直しを切ったもの。縦でも横でもOK</div>
+</div>
+
+<div class="notice">
+  <b>はじめに：</b>このスキルが仕上げるのは「カットのあと」です。撮った動画の要らない部分を切る作業は、先にスマホの編集アプリなどで済ませておいてください。
+</div>
+
+<div class="section-title" id="steps">
+  <p class="eyebrow">HOW TO USE</p>
+  <h2>この順番で、進めましょう。</h2>
+</div>
+
+<div class="steps">
+
+<article class="step" id="step-01">
+  <div class="step-head"><span class="number">01</span><div><p class="eyebrow">最初の1回だけ</p><h2>スキルをダウンロードして、Claudeに渡す</h2></div></div>
+  <p>上のボタンでZIPを保存します。Claudeデスクトップアプリを開いて「Code」タブを選び、作業する場所（例：デスクトップ）を選んで、新しいチャットを始めます。ZIPをチャットに添付して、下の入力文を送ります。</p>
+  <div class="mini-flow" style="padding:12px;border-left:3px solid var(--sage-d);font-size:14px">ZIPを添付 <b>→</b>「スキルを入れて、準備して」と送る</div>
+  <details class="prompt"><summary>そのまま使う入力文</summary><pre id="p-install"></pre></details>
+  <div class="actions"><button class="btn secondary" data-copy="install">入力文をコピー</button></div>
+  <p class="hint">「〜を入れてもいいですか？」と聞かれたら、動画を処理するための道具です。「はい」で大丈夫です。</p>
+</article>
+
+<article class="step" id="step-02">
+  <div class="step-head"><span class="number">02</span><div><p class="eyebrow">置き場所を答えるだけ</p><h2>作業フォルダは、Claudeが作る</h2></div></div>
+  <p>「どこに作りますか？」と聞かれたら「デスクトップに」と答えればOK。次の3つのフォルダができます。</p>
+  <div class="folders"><span>input<br><small>カット済みの動画を入れる</small></span><span>bgm<br><small>使いたい音楽（なくてもOK）</small></span><span>output<br><small>できあがりが入る</small></span></div>
+  <p>できたら、<b>input</b> にカット済みの動画を1本入れます。</p>
+</article>
+
+<article class="step" id="step-03">
+  <div class="step-head"><span class="number">03</span><div><p class="eyebrow">ひと言で始まる</p><h2>「仕上げて」と送る</h2></div></div>
+  <p>見た目を3種類から選べます。迷ったら「basic」でOKです。</p>
+  <div class="cards" style="margin-top:6px">
+    <div class="card"><h3>basic</h3><p>白文字＋黒の縁取り。顔を出して話す動画に。</p></div>
+    <div class="card"><h3>band</h3><p>白い帯の上に文字。お店・スクールなどやわらかい雰囲気に。</p></div>
+    <div class="card"><h3>pop</h3><p>強調が黄色。テンポよく話す動画に（右の見本はこれ）。</p></div>
+  </div>
+  <details class="prompt"><summary>そのまま使う入力文</summary><pre id="p-start"></pre></details>
+  <div class="actions"><button class="btn secondary" data-copy="start">入力文をコピー</button></div>
+  <p class="hint">1分の動画で、文字起こしに数分かかります。そのまま待っていてください。</p>
+</article>
+
+<article class="step" id="step-04">
+  <div class="step-head"><span class="number">04</span><div><p class="eyebrow">ここがデザイナーの出番</p><h2>テロップの直しを確認する</h2></div></div>
+  <p>Claudeが、聞き間違いや区切りを直した内容を見せてくれます。<b>どの言葉を強調するか</b>、<b>タイトルと表紙の言葉</b>は、あなたの目で選んでください。</p>
+  <div class="chat">
+    <p><span class="ai">Claude：</span>「行き抜け」を「息抜き」に直しました。強調は「5,000円」「60万円」の2か所にしています。</p>
+    <p><span class="you">あなた：</span>「全然違う」も強調して。タイトルは「編集だけはもったいない」で。</p>
+  </div>
+  <details class="prompt"><summary>直したいときの入力文（例）</summary><pre id="p-fix"></pre></details>
+  <div class="actions"><button class="btn secondary" data-copy="fix">入力文をコピー</button></div>
+</article>
+
+<article class="step" id="step-05">
+  <div class="step-head"><span class="number">05</span><div><p class="eyebrow">スマホで最後まで見る</p><h2>できあがりを確認する</h2></div></div>
+  <p><b>output</b> フォルダに、投稿用の動画（final.mp4）と表紙（cover.png）ができます。スマホに送って、音あり・音なしの両方で最後まで見てみましょう。<a href="checklist.html">特典②のチェックリスト</a>で確認すると安心です。</p>
+  <p class="hint">気になるところは「◯秒あたりの文字を直して」と伝えるだけ。直したところだけ作り直してくれます。</p>
+</article>
+
+</div>
+
+<div class="section-title" id="other-chat">
+  <p class="eyebrow">NEXT TIME</p>
+  <h2>次の動画・別のチャットで続けるとき</h2>
+</div>
+<p>Claudeのチャットは、別のチャットの会話を覚えていません。でも、作業の記録はフォルダに残っているので、<b>同じ作業フォルダを選んで、どの動画の続きかを伝えれば</b>そこから再開できます。</p>
+<div class="cards">
+  <div class="card"><h3>2本目の動画を作るとき</h3><p>新しいチャットで、作業フォルダを選んで「input の新しい動画を仕上げて」と送るだけ。準備（01・02）はもう要りません。</p><button class="btn secondary" data-copy="next">入力文をコピー</button></div>
+  <div class="card"><h3>前の動画を直したいとき</h3><p>「output の◯◯の続きから」と伝えると、前回のテロップを読み込んで、直すところから始めます。</p><button class="btn secondary" data-copy="resume">入力文をコピー</button></div>
+</div>
+
+<div class="section-title" id="gifts">
+  <p class="eyebrow">GIFTS</p>
+  <h2>撮る前と、投稿する前に。</h2>
+</div>
+<div class="cards">
+  <div class="card"><h3>🎁 特典① 台本の指示文テンプレ</h3><p>撮る前に、話す台本をAIと一緒に作るための入力文です。台本があると言い直しが減り、カットもテロップも楽になります。</p><a class="btn secondary" href="template.html">特典①を開く</a></div>
+  <div class="card"><h3>🎁 特典② プロっぽく見せるチェックリスト</h3><p>撮る前・撮るとき・カット・仕上げ・投稿前の20項目。チェックをつけながら確認できます。</p><a class="btn secondary" href="checklist.html">特典②を開く</a></div>
+</div>
+
+<div class="section-title" id="trouble">
+  <p class="eyebrow">TROUBLE</p>
+  <h2>困ったときは、ここだけ。</h2>
+</div>
+<div class="cards">
+  <div class="card"><h3>「Code」タブが見当たらない</h3><p>Claudeデスクトップアプリを最新にして、ログインしているプランを確認してください。無料プランでは使えない場合があります。</p></div>
+  <div class="card"><h3>準備で止まった・エラーが出た</h3><p>エラーの画面のまま「何が足りないか教えて、直して」と送ってください。足りない道具を確認して案内してくれます。</p></div>
+  <div class="card"><h3>文字の聞き間違いが多い</h3><p>人の名前や商品名は聞き間違えやすいです。「◯◯は△△と書きます」と先に伝えておくと、次から直してくれます。</p></div>
+  <div class="card"><h3>文字が速すぎて読めない</h3><p>話すのが速い動画では起こりやすいです。「テロップを短くして」と伝えるか、動画のカットで間を少し残してみてください。</p></div>
+</div>
+
+<details style="margin-top:40px"><summary>このページについて</summary>
+  <p>lilis × AIM「AI×リールで、インスタまで任せられるデザイナーになる勉強会」の参加者特典です。見本の動画は、講師の藤本拓馬（AIM）が撮った動画を、このスキルで仕上げたものです。</p>
+  <p>AIの文字起こしや直しは毎回少しずつ変わります。投稿する前に、必ずあなたの目で最後まで見て確認してください。</p>
+</details>
+
+</main>
+<footer>lilis × AIM ｜ ショート動画仕上げスキル · 2026.11<br>頑張りすぎなくていい。続けられる“仕組み”から。</footer>
+<div id="status" role="status" aria-live="polite"></div>
+
+<script>
+const prompts = {
+install:
+`添付したZIPは「short-reel-autotelop」というスキルです。このスキルを使えるように入れて、手順書の「準備」を進めてください。
+足りないものを入れるときは、入れる前に私に聞いてください。作業フォルダの場所も、私に聞いてから作ってください。`,
+start:
+`short-reel-autotelop を使って、input の動画をリールに仕上げてください。
+見た目は［basic］、BGMは［なし］でお願いします。
+テロップを直したら、強調する言葉・タイトル・表紙の言葉の案を見せて、私のOKをもらってから仕上げてください。`,
+fix:
+`［20秒あたり］のテロップを［「全然違う」］に直してください。
+強調は［「5,000円」と「全然違う」］にしてください。
+タイトルは［編集だけはもったいない］、表紙は［動画編集だけは もったいない］でお願いします。
+直したところだけ作り直してください。`,
+next:
+`short-reel-autotelop を使って、input に入れた新しい動画を仕上げてください。
+見た目は前回と同じ［basic］でお願いします。`,
+resume:
+`short-reel-autotelop で、output の［動画の名前］の続きからお願いします。
+前回のテロップを読み込んで、［直したいところ］を直して作り直してください。`
+};
+for (const [k, v] of Object.entries(prompts)) { const el = document.getElementById('p-' + k); if (el) el.textContent = v; }
+let statusTimer;
+function say(text){const s=document.getElementById('status');s.textContent=text;clearTimeout(statusTimer);statusTimer=setTimeout(()=>s.textContent='',4000)}
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
+  const text=prompts[b.dataset.copy];
+  try{await navigator.clipboard.writeText(text);say('入力文をコピーしました。Claudeに貼り付けてください。')}
+  catch{const a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.top='0';document.body.appendChild(a);a.focus();a.select();const ok=document.execCommand('copy');a.remove();say(ok?'入力文をコピーしました。':'コピーできませんでした。「そのまま使う入力文」を開いて選択してください。')}
+}));
+
+</script>
+</body>
+</html>

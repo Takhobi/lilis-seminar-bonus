@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>台本の指示文テンプレ｜lilis × AIM 参加特典</title>
+<style>
+:root{
+  --paper:#FAF4F0; --card:#FFFCFA; --ink:#463F3A; --muted:#8C817A;
+  --sage:#9BB8A6; --sage-d:#5F8570; --sage-t:#EDF3EF;
+  --pink:#EBCEC6; --pink-d:#C48C80; --pink-t:#FBEFEB; --line:#EADFD8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+a{color:var(--sage-d)}
+header{padding:16px max(5vw,16px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.brand{font-weight:800;color:var(--sage-d)}
+main{max-width:980px;margin:auto;padding:56px 24px}
+.eyebrow{color:var(--sage-d);font-size:12px;font-weight:800;letter-spacing:.12em;margin:0 0 6px}
+h1{font-size:clamp(28px,4.4vw,44px);line-height:1.5;letter-spacing:-.02em;margin:10px 0 18px}
+h2{font-size:23px;line-height:1.55;margin:0}
+h3{font-size:17px;margin:0 0 10px}
+p{margin:14px 0}
+.lead{color:var(--muted)}
+.small,figcaption{font-size:12px;color:var(--muted)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin-bottom:56px}
+.dots{display:grid;grid-template-columns:repeat(7,8px);gap:9px;margin-bottom:18px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+.gifts{display:grid;gap:14px}
+.gift{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:18px;padding:22px 24px;box-shadow:0 10px 36px #b9a59a26;border:1px solid var(--line);transition:transform .15s}
+.gift:hover{transform:translateY(-2px)}
+.gift .tag{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:2px 12px;margin-bottom:8px}
+.gift.one .tag{background:var(--pink-t);color:var(--pink-d)}
+.gift.two .tag{background:var(--sage-t);color:var(--sage-d)}
+.gift b{display:block;font-size:17px;line-height:1.6}
+.gift span.go{font-size:13px;color:var(--muted)}
+
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 6px}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;font-size:12px;color:var(--muted);line-height:1.5}
+.flow div b{display:block;font-size:15px;color:var(--sage-d)}
+.flow div:first-child{background:var(--pink-t);border-color:var(--pink)}
+.flow div:first-child b{color:var(--pink-d)}
+
+.section-title{margin:64px 0 26px;padding-bottom:16px;border-bottom:2px solid var(--pink)}
+.section-title .eyebrow{color:var(--pink-d)}
+.notice{padding:18px 20px;border-left:3px solid var(--sage);background:var(--sage-t);font-size:14px;border-radius:0 10px 10px 0}
+
+/* steps */
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;margin:0 0 36px;position:relative}
+.step:not(:last-child)::after{content:'↓';position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);color:var(--pink-d);font-size:24px}
+.step-head{display:flex;align-items:center;gap:18px}
+.number{color:var(--pink-d);font-size:36px;font-weight:800;line-height:1}
+.memo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.memo span{background:var(--pink-t);border-radius:10px;padding:10px 12px;font-weight:700;font-size:14px}
+.memo small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+details{padding:14px 16px;background:#F6F1EC;border-radius:10px;margin-top:18px}
+summary{font-weight:700;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.9 inherit;margin:10px 0 0}
+.fill{background:#FFF3C9;border-radius:3px;padding:0 2px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;background:var(--sage-d);color:#fff;text-decoration:none;border:1px solid var(--sage-d);font:inherit;font-size:14px;font-weight:700;cursor:pointer;line-height:1.5}
+.btn:hover{filter:brightness(.94)}
+.btn.secondary{background:transparent;color:var(--sage-d)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible+label{outline:3px solid var(--sage);outline-offset:3px}
+.hint{font-size:13px;color:var(--muted);border-left:3px solid var(--pink);padding:4px 0 4px 12px;margin-top:14px}
+
+/* checklist */
+.progress{position:sticky;top:0;z-index:3;background:var(--paper);padding:12px 0 14px;margin-bottom:8px}
+.bar{height:10px;border-radius:999px;background:#EFE5DF;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--sage-d));transition:width .25s}
+.progress p{margin:0 0 6px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.progress button{background:none;border:none;color:var(--muted);font:inherit;font-size:12px;text-decoration:underline;cursor:pointer}
+.group{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+.group h3{display:flex;align-items:center;gap:10px}
+.group h3 .chip{font-size:11px;font-weight:800;background:var(--sage-t);color:var(--sage-d);border-radius:999px;padding:2px 10px;letter-spacing:.08em}
+.check{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px dashed var(--line)}
+.check:first-of-type{border-top:none}
+.check input{appearance:none;flex:0 0 22px;width:22px;height:22px;margin:3px 0 0;border:2px solid var(--sage);border-radius:6px;background:#fff;cursor:pointer;display:grid;place-content:center}
+.check input:checked{background:var(--sage-d);border-color:var(--sage-d)}
+.check input:checked::after{content:'';width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check label{cursor:pointer;font-size:15px;line-height:1.7}
+.check label small{display:block;font-size:12.5px;color:var(--muted)}
+.check input:checked+label{color:var(--muted)}
+.done-msg{display:none;text-align:center;background:var(--sage-t);color:var(--sage-d);font-weight:700;border-radius:14px;padding:18px;margin-top:8px}
+.done-msg.show{display:block}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{padding:22px 24px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.card p{font-size:14px;margin:0 0 12px}
+
+footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font-size:12px;color:var(--muted)}
+#status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:8px;padding:12px 20px;max-width:90vw;font-size:13px;z-index:5}
+#status:empty{display:none}
+
+@media(max-width:720px){
+  main{padding:32px 16px}
+  .hero{grid-template-columns:1fr;gap:26px;margin-bottom:40px}
+  .step{padding:22px 18px}
+  .step-head{gap:12px}
+  .number{font-size:28px}
+  h2{font-size:20px}
+  .memo{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr}
+  .group{padding:18px 16px}
+  .actions>.btn{flex:1}
+  header{letter-spacing:.04em}
+}
+</style>
+<style>
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:-24px 0 36px}
+nav.tabs a{font-size:13px;font-weight:700;text-decoration:none;color:var(--sage-d);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+nav.tabs a.on{background:var(--sage-d);color:#fff;border-color:var(--sage-d)}
+</style>
+</head>
+<body>
+<header><span class="brand">lilis × AIM</span><span>SNS勉強会 vol.3 参加特典</span></header>
+<main>
+<nav class="tabs"><a href="index.html">リールを仕上げるスキル</a><a class="on" href="template.html">特典① 台本の指示文テンプレ</a><a href="checklist.html">特典② チェックリスト</a></nav>
+
+<p class="eyebrow">GIFT 01 ｜ SCRIPT TEMPLATE</p>
+<h1>話す動画の台本を、<br>AIと一緒に作る。</h1>
+<p class="lead">撮る前に台本があるだけで、言い直しが減って、カットもテロップもぐっと楽になります。<br>入力文の<span class="fill">［ ］</span>だけを、あなたの内容に書き換えて使ってください。</p>
+
+<div class="notice" style="margin-top:24px">
+  <b>使うAIは、ふだん使っているものでOKです。</b>ChatGPT・Claude・Geminiなど、文章で話しかけられるAIならどれでも使えます。
+</div>
+
+<div class="section-title" id="template">
+  <p class="eyebrow">STRUCTURE</p>
+  <h2>60秒の話す動画は、この4ブロックで。</h2>
+</div>
+<div class="flow" aria-label="60秒動画の4ブロック">
+  <div><b>つかみ</b>0〜3秒<br>悩みをひと言で</div>
+  <div><b>理由</b>〜15秒<br>なぜそうなる？</div>
+  <div><b>具体例</b>〜45秒<br>数字や例で見せる</div>
+  <div><b>行動</b>〜60秒<br>保存・フォローへ</div>
+</div>
+<p class="small">秒数は目安です。30秒の動画なら、理由と具体例を短くします。</p>
+
+<div class="steps" style="margin-top:36px">
+
+<article class="step" id="step-01">
+  <div class="step-head"><span class="number">01</span><div><p class="eyebrow">AIに頼む前に、3行だけ</p><h2>「誰に・何を」を先に決める</h2></div></div>
+  <p>ここだけは、AIではなくあなたが決めるところです。</p>
+  <div class="memo">
+    <span>① 誰に届けたい？<small>例：在宅で働くWebデザイナーさん</small></span>
+    <span>② その人の悩みは？<small>例：デザインだけだと単価が上がらない</small></span>
+    <span>③ 最初の3秒のひと言は？<small>例：「デザインだけの人、もったいない」</small></span>
+  </div>
+  <p class="hint">迷ったら、お客さまや周りの人に一番よく聞かれる質問から始めると決めやすいです。</p>
+</article>
+
+<article class="step" id="step-02">
+  <div class="step-head"><span class="number">02</span><div><p class="eyebrow">メインのテンプレ</p><h2>話す台本を作ってもらう</h2></div></div>
+  <p>下の入力文をコピーして、<span class="fill">［ ］</span>を01の3行に書き換えて送ります。</p>
+  <details class="prompt" open><summary>そのまま使う入力文</summary><pre id="p-script"></pre></details>
+  <div class="actions"><button class="btn" data-copy="script">入力文をコピー</button></div>
+</article>
+
+<article class="step" id="step-03">
+  <div class="step-head"><span class="number">03</span><div><p class="eyebrow">いちばん大事な3秒を、選べるように</p><h2>「つかみ」だけ、10案に広げる</h2></div></div>
+  <p>見てもらえるかどうかは、最初の数秒でほぼ決まります。候補をたくさん出してもらい、「これなら手が止まる」と思うものをあなたが選びましょう。</p>
+  <details class="prompt"><summary>そのまま使う入力文</summary><pre id="p-hook"></pre></details>
+  <div class="actions"><button class="btn secondary" data-copy="hook">入力文をコピー</button></div>
+</article>
+
+<article class="step" id="step-04">
+  <div class="step-head"><span class="number">04</span><div><p class="eyebrow">撮る直前に</p><h2>声に出しやすい「カンペ」にしてもらう</h2></div></div>
+  <p>書き言葉のまま読むと、かたく聞こえます。話し言葉に直して、撮影中にスマホの横で見られる形にしてもらいます。</p>
+  <details class="prompt"><summary>そのまま使う入力文</summary><pre id="p-kanpe"></pre></details>
+  <div class="actions"><button class="btn secondary" data-copy="kanpe">入力文をコピー</button></div>
+</article>
+
+<article class="step" id="step-05">
+  <div class="step-head"><span class="number">05</span><div><p class="eyebrow">仕上げの準備</p><h2>タイトルと表紙の言葉を決める</h2></div></div>
+  <p>撮ってカットしたら、あとは<a href="index.html">スキル</a>でテロップをつけて仕上げます。そのときに使うタイトルと表紙の言葉を、先に候補として出しておきましょう。</p>
+  <details class="prompt"><summary>そのまま使う入力文</summary><pre id="p-title"></pre></details>
+  <div class="actions"><button class="btn secondary" data-copy="title">入力文をコピー</button></div>
+</article>
+
+</div>
+
+<div class="cards" style="margin-top:8px">
+  <div class="card">
+    <h3>続けるために：5本分の企画をまとめて出す</h3>
+    <p>毎回ゼロから考えると続きません。1本目ができたら、同じ型で次の5本の企画をまとめて出してもらいましょう。</p>
+    <button class="btn secondary" data-copy="series">入力文をコピー</button>
+  </div>
+  <div class="card">
+    <h3>AIの答えが、なんだか“ありきたり”なとき</h3>
+    <p>AIのせいではなく、「誰に」がぼんやりしていることがほとんどです。01の①②を、年齢・状況・時間帯まで具体的にしてから、もう一度頼んでみてください。</p>
+  </div>
+</div>
+
+<details style="margin-top:40px"><summary>このページについて</summary>
+  <p>lilis × AIM「AI×リールで、インスタまで任せられるデザイナーになる勉強会」の参加者特典です。AIの答えは毎回少しずつ変わります。そのまま使わず、最後は必ずあなたの目で読んで整えてください。</p>
+</details>
+</main>
+<footer>lilis × AIM ｜ 台本の指示文テンプレ · 2026.11<br>頑張りすぎなくていい。続けられる“仕組み”から。</footer>
+<div id="status" role="status" aria-live="polite"></div>
+
+<script>
+const prompts = {
+script:
+`あなたはInstagramリールの台本作家です。次の条件で、私が顔を出して話す60秒のショート動画の台本を作ってください。
+
+・誰に：［例：在宅で働くWebデザイナーさん］
+・その人の悩み：［例：デザインだけだと単価が上がらない］
+・伝えたいことは1つだけ：［例：動画もできると、任される範囲が広がる］
+・最初の3秒のひと言：［例：「デザインだけの人、もったいない」］（なければ考えてください）
+・構成：つかみ（0〜3秒）→ 理由 → 具体例（数字や身近な例）→ 行動（保存・フォロー・プロフィールへ）
+・話し言葉で、1文は短く。早口にならない量にする
+・トーン：やさしく、押しつけない。「必ず」「絶対」「誰でも稼げる」などの言いすぎた表現は使わない
+
+出力は表で：秒数／話すこと／画面に出すテロップの案（13文字以内）`,
+hook:
+`さっきの台本の「つかみ（最初の3秒）」のひと言を、10個出してください。
+
+・［誰に］が「これ、私のことだ」と手を止める言葉にする
+・声に出して3秒で言える長さ
+・「〜な人へ」「〜していませんか？」「実は〜」など、型を混ぜてバラけさせる
+・あおる言葉（絶対・誰でも・稼げる など）は使わない
+
+それぞれに、なぜ手が止まるのかを一言で添えてください。`,
+kanpe:
+`この台本を、撮影中にスマホの横で見る「カンペ」にしてください。
+
+・話し言葉に直す（「〜である」→「〜なんです」など）
+・1行に1つの話。息つぎの場所で改行する
+・強調して言うところを【 】で示す
+・全体を声に出して読んだときに60秒以内におさまるか確認して、長ければ削る案も出す`,
+title:
+`この台本の動画につける、タイトルと表紙の言葉の候補を出してください。
+
+【タイトル】動画の上に出す見出し。15文字以内で5案
+【表紙】プロフィールに並んだとき、ひと目で内容が分かる言葉。10文字前後で5案
+・それぞれ、誰のどんな悩みに答える動画かが伝わるように
+・言いすぎた表現は使わない`,
+series:
+`今日作った台本と同じ型（つかみ → 理由 → 具体例 → 行動）で、次に撮る5本分の企画を出してください。
+
+・誰に：［例：在宅で働くWebデザイナーさん］（今日と同じ）
+・5本それぞれ、悩みの切り口を変える
+・各企画に「最初の3秒のひと言」「伝えたいこと1つ」「表紙の言葉」をつける
+・1本60秒以内で話せる内容にする
+
+出力は表で。`
+};
+for (const [k, v] of Object.entries(prompts)) { const el = document.getElementById('p-' + k); if (el) el.textContent = v; }
+let statusTimer;
+function say(text){const s=document.getElementById('status');s.textContent=text;clearTimeout(statusTimer);statusTimer=setTimeout(()=>s.textContent='',4000)}
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
+  const text=prompts[b.dataset.copy];
+  try{await navigator.clipboard.writeText(text);say('入力文をコピーしました。AIに貼り付けて、［ ］を書き換えてください。')}
+  catch{const a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.top='0';document.body.appendChild(a);a.focus();a.select();const ok=document.execCommand('copy');a.remove();say(ok?'入力文をコピーしました。':'コピーできませんでした。「そのまま使う入力文」を開いて選択してください。')}
+}));
+</script>
+</body>
+</html>
